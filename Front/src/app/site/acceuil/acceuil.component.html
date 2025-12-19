@@ -1,0 +1,324 @@
+
+
+
+<!-- HERO SECTION -->
+<section class="position-relative text-center text-white" >
+    <img src="images/hero.png" alt="hero" class="img-fluid w-100" style="object-fit: cover; height: 600px;">
+    <div class="position-absolute top-50 start-50 translate-middle">
+      <h2 class="fw-bold display-5">Pole Excellence</h2>
+      <p class="lead">La qualité de nos formations est notre premier atout</p>
+    </div>
+  </section>
+  
+  <!-- SERVICES SECTION -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <small class="text-warning">Service</small>
+          <h3 class="fw-bold">Nos Services</h3>
+          <p class="text-muted">Nous mettons à votre disposition des solutions adaptées pour développer vos compétences, accompagner vos projets et renforcer vos performances.</p>
+        </div>
+        <a class="btn" routerLink="/service" style="background-color: #173A74; color: #fff;">Voir les services</a>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4" >
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Conseil</h5>
+              <p class="card-text">Nous vous accompagnons dans vos choix stratégiques pour atteindre vos objectifs.</p>
+              <a routerLink="/service" class="text-primary">Lire plus</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm border-primary"style="background-color: #173A74; color:white;">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Entreprenariat</h5>
+              <p class="card-text">Des formations adaptées pour les porteurs de projets et jeunes entrepreneurs.</p>
+              <a routerLink="/entrepreunariat" class="text-primary">Lire plus</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Formation</h5>
+              <p class="card-text">Des formations certifiantes dans plusieurs domaines professionnels.</p>
+              <a routerLink="/formation" class="text-primary">Lire plus</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- À PROPOS SECTION -->
+  <section class="py-5 bg-warning text-dark">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <!-- Image -->
+        <div class="col-md-6">
+          <img src="icons/logo-pole.png" class="img-fluid" alt="about image" style="height: 300px;width: 500px;">
+        </div>
+  
+        <!-- Texte -->
+        <div class="col-md-6">
+          <small class="text-white fw-bold">À propos</small>
+          <h3 class="fw-bold text-dark">Qui sommes nous ?</h3>
+          <p class="text-dark">
+            Nous sommes un centre de formation professionnelle avec une expertise reconnue dans l'accompagnement des jeunes et des entrepreneurs.
+          </p>
+  
+          <div class="row text-center mt-4">
+            <div class="col-4">
+              <h4 class="fw-bold">150+</h4>
+              <p class="small mb-0">Participants</p>
+            </div>
+            <div class="col-4">
+              <h4 class="fw-bold">10+</h4>
+              <p class="small mb-0">Formateurs</p>
+            </div>
+            <div class="col-4">
+              <h4 class="fw-bold">6+</h4>
+              <p class="small mb-0">Programmes</p>
+            </div>
+          </div>
+  
+          <a href="#" class="btn btn-dark mt-4" routerLink="/a-propos" >Lire plus</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- partners.component.html -->
+<div class="container py-5">
+
+  <!-- Section Partenaires -->
+  <section id="partners" class="mb-5">
+    <h2 class="h4 text-primary mb-3">Nos Partenaires</h2>
+    <div class="position-relative">
+      <div class="d-flex overflow-auto">
+        <!-- Répétez ce bloc pour chaque partenaire -->
+        <div class="flex-shrink-0 text-center px-3">
+          <img src="icons/logo-pole.png" alt="Partenaire 1" class="rounded-circle shadow-sm" style="width:80px;height:80px;">
+          <p class="small mt-2">POLE-EXCELLENCE</p>
+        </div>
+
+        <div class="flex-shrink-0 text-center px-3">
+          <img src="icons/logo-facej.png" alt="Partenaire 1" class="rounded-circle shadow-sm" style="width:80px;height:80px;">
+          <p class="small mt-2">FACEJ</p>
+        </div>
+
+        <div class="flex-shrink-0 text-center px-3">
+          <img src="icons/logo-ACK.png" alt="Partenaire 1" class="rounded-circle shadow-sm" style="width:80px;height:80px;">
+          <p class="small mt-2">ACK</p>
+        </div>
+
+        <div class="flex-shrink-0 text-center px-3">
+          <img src="icons/logo-proman.png" alt="Partenaire 1" class="rounded-circle shadow-sm" style="width:80px;height:80px;">
+          <p class="small mt-2">PROMAN</p>
+        </div>
+        <!-- … -->
+      </div>
+      <!-- Prev / Next buttons -->
+      <button class="btn btn-sm btn-light position-absolute top-50 start-0 translate-middle-y">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      <button class="btn btn-sm btn-light position-absolute top-50 end-0 translate-middle-y">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section Formations -->
+  <section id="formations" class="mb-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <div>
+        <h2 class="h4 text-dark">Nos Formations</h2>
+        <p class="text-muted small">Les formations les plus récentes</p>
+      </div>
+      <a  class="btn"routerLink="/formation" style="background-color: #173A74; color: #fff;" >Voir les formations →</a>
+    </div>
+      <!-- Répétez ce bloc pour chaque formation -->
+       <ng-container *ngIf="formation$ | async as formation; else loadingFormation">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col" *ngFor="let off of formation | slice:0:3">
+          <div class="card h-100 shadow-sm">
+            <img [src]="off.image" class="bg-light" style="height: 180px;">
+            <span class=" position-absolute"
+            style="
+              top: 175px;
+              left: 0;
+              transform: translate(0, -50%);
+              background-color: #173A74;
+              color: #fff;
+              padding: 0.375rem 0.75rem;
+              border-radius: 0 0.5rem 0.5rem 0;
+              font-size: 0.875rem;
+              font-weight: 500;
+              line-height: 1;
+            ">{{ off.prix }} F CFA</span>
+              <div class="card-body d-flex flex-column">
+              <h5 class="card-title">{{ off.titre }}</h5>
+              <p class="card-text text-muted flex-grow-1" id="clamp-html" [innerHTML]="off.description"></p>
+              <a [routerLink]="['/formation-details/',off.id]" class="small text-decoration-none">
+                  Voir plus &rarr;
+                </a>
+          </div>
+        </div>
+      </div>
+      </div>
+      </ng-container>
+      <ng-template #loadingFormation>
+         <div class="text-center py-5">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Chargement...</span>
+    </div>
+    <p class="mt-2">Chargement des formations...</p>
+  </div>
+      </ng-template>
+      <!-- … -->
+  </section>
+
+  <!-- Section Témoignages -->
+  <section id="testimonials" class="mb-5">
+    <h2 class="h4 text-dark mb-3">Les Témoignages</h2>
+    <p class="text-muted small mb-4">Les témoignages de nos clients et partenaires</p>
+    <div id="carouselTestimonials" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Card témoignage -->
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <div class="mb-2">
+                    <!-- 5 étoiles -->
+                    <i class="bi bi-star-fill">⭐</i><i class="bi bi-star-fill">⭐</i>
+                    <i class="bi bi-star-fill">⭐</i><i class="bi bi-star-fill">⭐</i>
+                    <i class="bi bi-star-fill">⭐</i>
+                  </div>
+                  <p class="card-text small">
+                    “Grâce à Pole Excellence, notre équipe a bénéficié d’une formation pratique et adaptée. Les résultats se font déjà sentir dans nos performances au quotidien.”
+                  </p>
+                </div>
+                <div class="card-footer border-0 bg-transparent">
+                  <strong>Awa Konaté</strong><br>
+                  <span class="text-muted small">Directrice RH, TechMali</span>
+                </div>
+              </div>
+            </div>
+            <!-- … 2 autres témoignages -->
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <div class="mb-2">
+                    <!-- 5 étoiles -->
+                    <i class="bi bi-star-fill">⭐</i><i class="bi bi-star-fill">⭐</i>
+                    <i class="bi bi-star-fill">⭐</i><i class="bi bi-star-fill">⭐</i>
+                    <i class="bi bi-star-fill">⭐</i>
+                  </div>
+                  <p class="card-text small">
+                    “L’accompagnement que nous avons reçu a été déterminant pour lancer notre startup. Leur expertise et leur écoute ont fait toute la différence.”
+                  </p>
+                </div>
+                <div class="card-footer border-0 bg-transparent">
+                  <strong>Moussa Traoré</strong><br>
+                  <span class="text-muted small">Fondateur, AgroStart</span>
+                </div>
+              </div>
+            </div>
+            <!-- … 1 autre témoignages -->
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <div class="mb-2">
+                    <!-- 5 étoiles -->
+                    <i class="bi bi-star-fill">⭐</i><i class="bi bi-star-fill">⭐</i>
+                    <i class="bi bi-star-fill">⭐</i><i class="bi bi-star-fill">⭐</i>
+                    <i class="bi bi-star-fill">⭐</i>
+                  </div>
+                  <p class="card-text small">
+                    “Les services de conseil offerts par Pole Excellence sont d’une grande qualité. Nous avons pu structurer nos projets et atteindre nos objectifs plus rapidement.”
+                  </p>
+                </div>
+                <div class="card-footer border-0 bg-transparent">
+                  <strong>Fatoumata Diallo</strong><br>
+                  <span class="text-muted small">CEO, InnovSolutions</span>
+                </div>
+              </div>
+            </div>
+                        
+          </div>
+        </div>
+        <!-- Vous pouvez ajouter plusieurs .carousel-item si besoin -->
+      </div>
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="prev" >
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section Blog -->
+  <section id="blog">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <div>
+        <h2 class="h4 text-dark">Blog</h2>
+        <p class="text-muted small">Les articles publiés</p>
+      </div>
+      <a  class="btn"routerLink="/blog" style="background-color: #173A74; color: #fff;">Voir plus d’articles →</a>
+    </div>
+    
+      <!-- Répétez pour chaque article -->
+       <ng-container *ngIf="article$ | async as article; else loadingArticle">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col" *ngFor="let off of article | slice:0:3">
+          <div class="card h-100 shadow-sm">
+            <img [src]="off.image" class="bg-light" style="height: 180px;">
+            <span class=" position-absolute"
+            style="
+              top: 175px;
+              left: 0;
+              transform: translate(0, -50%);
+              background-color: #173A74;
+              color: #fff;
+              padding: 0.375rem 0.75rem;
+              border-radius: 0 0.5rem 0.5rem 0;
+              font-size: 0.875rem;
+              font-weight: 500;
+              line-height: 1;
+            ">{{ off.categorieid.nom }}</span>
+            <div class="card-body d-flex flex-column">
+              <span style="color: blue;">📅 {{off.datedepubli}}</span>
+              <h5 class="card-title">{{ off.titre }}</h5>
+              <p class="card-text text-muted flex-grow-1" id="clamp-html"  [innerHTML]="off.contenu"></p>
+              <a [routerLink]="['/blog-details/',off.id]" class="small text-decoration-none">
+                  Voir plus &rarr;
+                </a>
+          </div>
+        </div>
+      </div>
+      </div>
+       </ng-container>
+    <ng-template #loadingArticle>
+         <div class="text-center py-5">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Chargement...</span>
+    </div>
+    <p class="mt-2">Chargement des formations...</p>
+  </div>
+      </ng-template>
+      <!-- … -->
+   
+  </section>
+
+</div>
+
+

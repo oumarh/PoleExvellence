@@ -1,0 +1,79 @@
+
+
+
+  <!-- Hero / Image de couverture -->
+   
+<img [src]="data?.image"  class="img-fluid w-100 " 
+style="object-fit: cover; height: 600px;"> 
+  <div class="container py-5">
+
+    <!-- Titre de l’offre -->
+    <h2 class="fw-bold mb-3">{{data?.titre}}</h2>
+
+    <!-- Description -->
+    <h5 class="text-warning mb-2">Description de la formation :</h5>
+    <div class="text-muted mb-5" class="wysiwyg-content" style="text-align: start;" [innerHTML]="data?.description">
+    </div>
+    <button class="btn btn-outline-primary mb-3" (click)="goBack()">&#8592; Retour</button>
+    <!-- Formulaire de candidature -->
+    <div
+      class="bg-primary text-white rounded-3 p-4"
+      style="background-color: #173A74 !important;"
+    >
+    <form [formGroup]="candidats" (ngSubmit)="onSubmit()">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="nom" class="form-label">Nom<span style="color:red ;">*</span></label>
+          <input type="text" formControlName="nom" class="form-control" placeholder="Votre nom" required >
+        </div>
+        <div class="col-md-6">
+          <label for="prenom" class="form-label">Prénom<span style="color:red ;">*</span></label>
+          <input type="text" formControlName="prenom" class="form-control" placeholder="Votre prénom" required >
+        </div>
+        <div class="col-md-6">
+          <label for="courriel" class="form-label">Courriel<span style="color:red ;">*</span></label>
+          <input type="email" formControlName="email" class="form-control" placeholder="exemple@mail.com" required >
+        </div>
+        <div class="col-md-6">
+          <label for="telephone" class="form-label">N° Téléphone<span style="color:red ;">*</span></label>
+          <input type="tel" formControlName="telephone" class="form-control" placeholder="0000 00 00 00" required >
+        </div>
+        <div class="col-md-6">
+          <label for="profession" class="form-label">Profession</label>
+          <input type="text" formControlName="profession" class="form-control" placeholder="Votre profession" >
+        </div>
+        <div class="col-md-6">
+          <label for="entreprise" class="form-label">Entreprise / Organisation</label>
+          <input type="text" formControlName="organisation" class="form-control" placeholder="Nom de l’entreprise" >
+        </div>
+        <div class="col-md-6">
+          <label for="adresse" class="form-label">Adresse / Ville de résidence</label>
+          <input type="text" formControlName="address" class="form-control" placeholder="Ville, quartier…" >
+        </div>
+        <div class="col-md-6">
+          <label for="specialisation" class="form-label">Activité</label>
+          <input
+            type="text"
+            formControlName="specialisation"
+            class="form-control"
+            placeholder="Votre activité"
+            
+          >
+        </div>
+      </div>
+        <div class="text-start mt-4">
+          <p class="mt-3 text" ><span style="color:red ;">*</span> champs obligatoires </p>
+        </div>
+      <!-- Bouton Postuler aligné à droite -->
+      <div class="text-end mt-4">
+        <button  type="submit" class="btn btn-warning px-4" [disabled]="candidats.invalid">
+          Postuler
+        </button>
+        <p class="mt-3 text-success" *ngIf="message">{{ message }}</p>
+      </div>
+    </form>
+    </div>
+
+  </div>
+
+

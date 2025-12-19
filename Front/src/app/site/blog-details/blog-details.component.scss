@@ -1,0 +1,20 @@
+.wysiwyg-content {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
+  line-height: 1.5;
+}
+
+/* BONUS : gérer les <p>, <h1> etc. produits par le WYSIWYG */
+.wysiwyg-content p,
+.wysiwyg-content h1,
+.wysiwyg-content h2,
+.wysiwyg-content h3,
+.wysiwyg-content h4,
+.wysiwyg-content h5,
+.wysiwyg-content h6 {
+  margin: 0 0 10px;
+  word-break: break-word;
+  white-space: normal;
+}

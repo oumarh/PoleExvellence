@@ -1,0 +1,105 @@
+
+
+<main>
+  <!-- Bandeau orange -->
+  <section class="position-relative text-center text-white" 
+    style="height: 300px; background: url('images/contact-us-2993109_1280.jpg') center/cover no-repeat;">
+  </section>
+
+
+  <!-- Contenu principal -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row gx-5">
+
+        <!-- Colonne gauche : infos -->
+        <div class="col-md-5 mb-4 mb-md-0">
+          <h2 class="h4 mb-3" style="color:#FAAD1B ;">CONTACTEZ-NOUS</h2>
+          <p class="text-muted mb-4">N’hésitez pas à nous contacter ! Nous vous répondrons dans les plus brefs délais. Votre satisfaction est notre priorité.</p>
+          <ul class="list-unstyled">
+            <li class="mb-3 d-flex align-items-center">
+              <i class="bi bi-telephone-fill text-warning me-2"></i>
+              <a href="tel:+22377777777" class="text-decoration-none text-dark">
+                <img src="icons/telephone.svg" alt="" style="padding-right:10px ;">
+                +223 77 77 77 77
+              </a>
+            </li>
+            <li class="mb-3 d-flex align-items-center">
+              <i class="bi bi-envelope-fill text-warning me-2"></i>
+              <a href="mailto:contact@polexcellence.com" class="text-decoration-none text-dark">
+                <img src="icons/mail.svg" alt="" style="padding-right:10px ;">
+                contact&#64;polexcellence.com
+              </a>
+            </li>
+            <li class="d-flex align-items-start">
+              <i class="bi bi-geo-alt-fill text-warning me-2 mt-1"></i>
+              <img src="icons/localisation.svg" alt="" style="padding-right:10px ;">
+              <span>
+                Baco Djicoroni Golf, Bamako à 400 m de la mosquée Wami
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Colonne droite : formulaire -->
+        <div class="col-md-7">
+          <form #contactForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="nom" class="form-label">Nom complet</label>
+                <input
+                  type="text"
+                  id="nom"
+                  name="nom"
+                  class="form-control"
+                  required
+                  [(ngModel)]="contact.nom"
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  required
+                  [(ngModel)]="contact.email"
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="objet" class="form-label">Objet</label>
+                <input
+                  type="text"
+                  id="objet"
+                  name="objet"
+                  class="form-control"
+                  [(ngModel)]="contact.objet"
+                />
+              </div>
+              <div class="col-12">
+                <label for="message" class="form-label">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  class="form-control"
+                  required
+                  [(ngModel)]="contact.message"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="text-end mt-4">
+              <button type="submit" class="btn btn-primary">
+                Envoyer
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+

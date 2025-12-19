@@ -1,0 +1,80 @@
+<div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+   <nav class="col-12 col-md-3 col-lg-2 bg-light vh-100 p-3">
+    <ul class="nav flex-column">
+      <li class="nav-item mb-2">
+        <a routerLink="/dashboard" class="nav-link active">Dashboard</a>
+      </li>
+      <li class="nav-item mb-2">
+        <a routerLink="/administrateur" class="nav-link">Administrateur</a>
+      </li>
+      <li class="nav-item mb-2">
+        <a routerLink="/admin-formation" class="nav-link">Formation</a>
+      </li>
+      <li class="nav-item mb-2">
+        <a routerLink="/offre" class="nav-link">Offres Entrepreneurial</a>
+      </li>
+      <li class="nav-item mb-2">
+        <a routerLink="/candidat" class="nav-link">Candidats</a>
+      </li>
+      <li class="nav-item mb-2">
+        <a routerLink="/entrepreneur" class="nav-link">Entrepreneur</a>
+      </li>
+      <li class="nav-item mb-2">
+        <a routerLink="/admin-blog" class="nav-link">Blog</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/categorie" class="nav-link">Catégorie</a>
+      </li>
+      <li class="nav-item mt-4">
+          <button class="btn btn-outline-danger w-100" (click)="logout()">Déconnexion</button>
+        </li>
+    </ul>
+  </nav>
+  
+      <!-- Main Content -->
+      <main class="col-md-9 py-4">
+        <h2 class="fw-bold mb-4">Modification d'une Catégorie</h2>
+  
+        <form [formGroup]="categorie" (ngSubmit)="onSubmit()" class="row g-3">
+  
+          <!-- Nom -->
+          <div class="col-md-6">
+            <label for="nom" class="form-label">Nom</label>
+            <input
+              type="text"
+              id="nom"
+              name="nom"
+              class="form-control"
+              required
+              formControlName="nom"
+            />
+          </div>
+  
+          <!-- Type de catégorie -->
+          <div class="col-md-6">
+            <label for="type" class="form-label">Type de Catégorie</label>
+            <select class="form-control"  formControlName="type" id="type" required>
+              <option value="ARTICLE">Catégorie d'article</option>
+              <option value="FORMATION">Catégorie de formation</option>
+              <option value="OFFRE">Catégorie d'offre</option>
+            </select>
+            
+          </div>
+  
+          <!-- Boutons Publier et Annuler -->
+          <div class="col-12 d-flex gap-2">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="categorie.invalid"
+            >
+              Publier catégorie
+            </button>
+            <button type="button" class="btn btn-secondary" (click)="onCancel()">Annuler</button>
+          </div>
+        </form>
+      </main>
+    </div>
+  </div>

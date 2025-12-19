@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-PoleExcellenceApplication<PoleExcellence>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.PoleExcellence.PoleExcellenceApplication",
+            "projectName": "PoleExcellence",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+/* Agrandit la zone d'édition réelle */
+
+:host ::ng-deep .custom-editor .NgxEditor__Content,
+:host ::ng-deep .custom-editor .ProseMirror {
+  min-height: 320px;
+  max-height: 640px;   /* optionnel : limite haute avant scroll */
+  padding: 12px;
+  line-height: 1.6;
+  overflow-y: auto;     /* scroll si très long */
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+}

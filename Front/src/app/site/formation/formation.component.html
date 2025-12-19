@@ -1,0 +1,91 @@
+<!-- Hero -->
+<section
+  class="position-relative text-center text-white"
+  style="height: 300px; background: url('images/hero2.png') center/cover no-repeat;"
+>
+  <div class="position-absolute top-0 bottom-0 start-0 end-0" style="background: rgba(0,0,0,0.5);"></div>
+  <div class="position-relative d-flex flex-column justify-content-center align-items-center h-100">
+    <h1 class="display-6 fw-bold">Nos Formations</h1>
+  </div>
+</section>
+
+<div class="container my-5">
+
+  <!-- Filtres -->
+  <div class="bg-warning rounded p-3 mb-4" style="border: 2px solid #fff;">
+    <form class="row g-2 align-items-center" (ngSubmit)="applyFilter()">
+      <div class="col-12 col-md-4">
+        <input [(ngModel)]="nameFilter" name="name" type="text" class="form-control" placeholder="Nom…" />
+      </div>
+      <div class="col-6 col-md-3">
+        <select [(ngModel)]="durationFilter" name="duration" class="form-select">
+          <option value="">Durée…</option>
+          <option *ngFor="let d of durations" [value]="d">{{ d }}</option>
+        </select>
+      </div>
+      <div class="col-6 col-md-3">
+        <select [(ngModel)]="categoryFilter" name="category" class="form-select">
+          <option value="">Catégorie…</option>
+          <ng-container *ngIf="formation$ | async as data">
+            <option *ngFor="let c of getUniqueCategories(data)" [value]="c">{{ c }}</option>
+          </ng-container>
+        </select>
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-dark d-flex align-items-center" style="padding-top: 3px;">
+          <span>Filtrer</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+               class="bi bi-funnel-fill" viewBox="0 0 16 16">
+            <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .39.812L9.543 7.882A2 2 0 0 0 9 9.385V13.5a.5.5 0 0 1-.342.474l-2 .667a.5.5 0 0 1-.658-.474V9.385a2 2 0 0 0-.533-1.503L.61 1.812A.5.5 0 0 1 1.5 1.5Z" />
+          </svg>
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Grille des formations -->
+  <ng-container *ngIf="formation$ | async as data; else loading">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <div class="col" *ngFor="let off of getPaginatedData(data)">
+        <div class="card h-100 shadow-sm position-relative">
+          <img [src]="off.image" class="bg-light" style="height: 180px;">
+          <span class="position-absolute"
+                style="top: 175px; left: 0; transform: translate(0, -50%);
+                       background-color: #173A74; color: #fff; padding: 0.375rem 0.75rem;
+                       border-radius: 0 0.5rem 0.5rem 0; font-size: 0.875rem;">
+            {{ off.prix }} FCFA
+          </span>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">{{ off.titre }}</h5>
+            <div class="card-text text-muted flex-grow-1" [innerHTML]="off.description"></div>
+            <a [routerLink]="['/formation-details', off.id]" class="small text-decoration-none">Voir plus &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <nav aria-label="Navigation pagination" class="mt-5">
+      <ul class="pagination justify-content-center mb-0">
+        <li class="page-item" [class.disabled]="currentPage === 1">
+          <a class="page-link" (click)="changePage(currentPage - 1, data)">Préc</a>
+        </li>
+        <li class="page-item" *ngFor="let page of [].constructor(getTotalPages(data)); let i = index"
+            [class.active]="currentPage === i + 1">
+          <a class="page-link" (click)="changePage(i + 1, data)">{{ i + 1 }}</a>
+        </li>
+        <li class="page-item" [class.disabled]="currentPage === getTotalPages(data)">
+          <a class="page-link" (click)="changePage(currentPage + 1, data)">Suiv</a>
+        </li>
+      </ul>
+    </nav>
+  </ng-container>
+
+  <!-- Spinner de chargement -->
+  <ng-template #loading>
+    <div class="text-center py-5">
+      <div class="spinner-border text-primary" role="status"></div>
+      <p class="mt-2">Chargement des formations...</p>
+    </div>
+  </ng-template>
+</div>

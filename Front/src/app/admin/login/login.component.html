@@ -1,0 +1,52 @@
+<main class="d-flex justify-content-center align-items-start" style="min-height: 80vh; padding-top: 4rem;">
+    <div class="bg-light p-5 shadow" style="max-width: 400px; width: 100%;">
+      <h3 class="mb-1">PolExcellence</h3>
+      <a class="text-muted mb-4" routerLink="/dashboard">Bon retour parmi nous</a>
+  
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <!-- Email -->
+  <div class="mb-3">
+    <label for="username" class="form-label">Nom d’utilisateur</label>
+    <input
+      type="text"
+      id="username"
+      class="form-control"
+      formControlName="email"
+      required
+    />
+  </div>
+
+  <!-- Password -->
+  <div class="mb-3">
+    <label for="password" class="form-label">Mot de passe</label>
+    <input
+      type="password"
+      id="password"
+      class="form-control"
+      formControlName="password"
+      required
+    />
+    <div class="text-end mt-1">
+      <a routerLink="/reset-password" class="small">Mot de passe oublié ?</a>
+    </div>
+  </div>
+
+  <!-- Se souvenir -->
+  <div class="form-check mb-4">
+    <input type="checkbox" class="form-check-input" id="rememberMe" />
+    <label class="form-check-label" for="rememberMe">Se souvenir de moi</label>
+  </div>
+
+  <!-- Error -->
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Connexion -->
+  <button type="submit" class="btn btn-primary w-100" [disabled]="loginForm.invalid">
+    Connexion
+  </button>
+</form>
+ 
+    </div>
+  </main>

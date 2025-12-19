@@ -1,0 +1,69 @@
+<div class="container-fluid">
+    <div class="row">
+  
+      <!-- Sidebar -->
+    <nav class="col-12 col-md-3 col-lg-2 bg-light vh-100 p-3">
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2">
+          <a routerLink="/dashboard" class="nav-link active">Dashboard</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a routerLink="/administrateur" class="nav-link">Administrateur</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a routerLink="/admin-formation" class="nav-link">Formation</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a routerLink="/offre" class="nav-link">Offres Entrepreneurial</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a routerLink="/candidat" class="nav-link">Candidats</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a routerLink="/entrepreneur" class="nav-link">Entrepreneur</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a routerLink="/admin-blog" class="nav-link">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/categorie" class="nav-link">Catégorie</a>
+        </li>
+        <li class="nav-item mt-4">
+          <button class="btn btn-outline-danger w-100" (click)="logout()">Déconnexion</button>
+        </li>
+      </ul>
+    </nav>
+  
+      <!-- Main content -->
+      <main class="col-12 col-md-9 col-lg-10 py-4">
+        <button class="btn btn-outline-primary mb-3" (click)="goBack()">&#8592; Retour</button>
+        <!-- Nom complet en titre -->
+        <h2 class="fw-bold mb-4">{{ data.nom }} {{ data.prenom }}</h2>
+  
+        <!-- Liste des propriétés -->
+        <dl class="row">
+          <dt class="col-sm-3">Email :</dt>
+          <dd class="col-sm-9">{{ data.email }}</dd>
+  
+          <dt class="col-sm-3">Profession :</dt>
+          <dd class="col-sm-9">{{ data.profession }}</dd>
+  
+          <dt class="col-sm-3">Adresse :</dt>
+          <dd class="col-sm-9">{{ data.address }}</dd>
+  
+          <dt class="col-sm-3">Entreprise/Organisation :</dt>
+          <dd class="col-sm-9">{{ data.organisation }}</dd>
+  
+          <dt class="col-sm-3">Spécialité/Formation :</dt>
+          <dd class="col-sm-9">{{ data.specialisation }}</dd>
+  
+          <dt class="col-sm-3">N° Téléphone :</dt>
+          <dd class="col-sm-9">{{ data.telephone }}</dd>
+  
+          <dt class="col-sm-3">Formation Sélectionnée :</dt>
+          <dd class="col-sm-9">{{ data.formationid.titre }}</dd>
+        </dl>
+      </main>
+  
+    </div>
+  </div>

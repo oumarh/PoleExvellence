@@ -1,0 +1,179 @@
+<main>
+
+    <!-- Bannière grise -->
+    <section
+    class="position-relative text-center text-white"
+    style="height: 300px; background: url('images/u-a-e-5475247_1280.jpg') center/cover no-repeat;"
+  > </section>
+    <!-- Section « Qui sommes‑nous ? » -->
+  <section class="py-1 bg-warning text-dark">
+    <div class="container" style="margin: none;">
+      <div class="row align-items-center g-4">
+        <!-- Image -->
+        <div class="col-md-6">
+          <img src="images/hands-375260_1280.jpg" class="img-fluid" alt="about image" style="height: 300px;width: 500px;">
+        </div>
+  
+        <!-- Texte -->
+        <div class="col-md-6">
+          <small class="text-white fw-bold">À propos</small>
+          <h3 class="fw-bold text-dark">Qui sommes nous ?</h3>
+          <p class="text-dark">
+            Nous sommes un centre de formation professionnelle avec une expertise reconnue dans l'accompagnement des jeunes et des entrepreneurs.
+          </p>
+  
+          <div class="row text-center mt-4">
+            <div class="col-4">
+              <h4 class="fw-bold">150+</h4>
+              <p class="small mb-0">Participants</p>
+            </div>
+            <div class="col-4">
+              <h4 class="fw-bold">10+</h4>
+              <p class="small mb-0">Formateurs</p>
+            </div>
+            <div class="col-4">
+              <h4 class="fw-bold">6+</h4>
+              <p class="small mb-0">Programmes</p>
+            </div>
+          </div>
+  
+          
+        </div>
+      </div>
+    </div>
+  </section>
+   
+   <!-- Section « Nos Valeurs » -->
+    <section class="py-1" style="background:#f7a600;">
+      <div class="container d-flex flex-column flex-lg-row ">
+        
+       <div class="col-lg-6 align-items-center" style="padding-right: 20px;">
+          <h3>Nos Valeurs</h3>
+           <ul>
+           <li>Intégrité : Nous croyons en la transparence et l’honnêteté dans toutes nos actions et relations.</li>
+           <li>Excellence : Nous visons toujours le meilleur, en offrant des services de qualité adaptés aux besoins de nos clients.</li>
+           <li>Innovation : Nous encourageons la créativité et l’adaptation pour répondre aux défis actuels et futurs.</li>
+           <li>Engagement : Nous plaçons l’humain au centre de nos priorités et nous investissons pleinement dans chaque projet.</li>
+           <li>Solidarité : Nous favorisons la collaboration et le partage pour construire des solutions durables.</li>
+          </ul>
+        </div>
+        <div class=" ">
+          <img src="images/notebook-5556822_1280.jpg" alt="Nos Valeurs" class="img-fluid rounded" style="height: 300px;width: 500px;padding-left: 50px;">
+        </div>
+      </div>
+    </section>
+
+  <!-- Section « Notre Mission » -->
+    <section class="py-1 bg-primary text-white">
+      <div class="container d-flex flex-column flex-lg-row " >
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <img src="images/asia-1853267_1280.jpg" alt="Nos Valeurs" class="img-fluid rounded" style="height: 300px;width: 500px;">
+        </div>
+        
+        <div class="col-lg-6 align-items-center" style="padding-left: 20px;">
+          <h3>Notre Mission</h3>
+          <ul>
+           <li>Accompagner les entreprises et les individus dans leur développement à travers des services adaptés et innovants.</li>
+           <li>Former et transmettre des compétences clés afin de renforcer les capacités et favoriser l’employabilité.</li>
+           <li>Conseiller et orienter nos partenaires pour optimiser leurs performances et atteindre leurs objectifs stratégiques.</li>
+           <li>Contribuer activement au développement socio-économique en promouvant l’entrepreneuriat et l’innovation.</li>
+           <li>Faciliter l’accès à l’information et aux ressources pour permettre à chacun de réaliser son plein potentiel.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  
+   
+        <!-- … vos sections “Qui sommes-nous”, mission, valeurs … -->
+      
+        <!-- Section “Notre Équipe” -->
+        <section class="py-5 bg-light">
+            <div class="container">
+              <h2 class="h4 mb-4">Notre Équipe</h2>
+              <div class="position-relative">
+          
+                <!-- Flèche gauche -->
+                <button
+                  class="btn btn-outline-secondary position-absolute top-50 start-0 translate-middle-y"
+                  
+                  (click)="teamContainer.scrollBy({ left: -200, behavior: 'smooth' })"
+                >
+                  <i class="bi bi-chevron-left"></i>
+                </button>
+          
+                <!-- Conteneur scrollable centré -->
+                <div
+                  #teamContainer
+                  class="d-flex justify-content-center overflow-auto gap-4 px-5 py-2"
+                  style="scroll-behavior: smooth;"
+                >
+                  <div
+                    *ngFor="let m of teamMembers"
+                    class="text-center flex-shrink-0"
+                    style="width:120px; cursor:pointer;"
+                    (click)="selectMember(m)"
+                  >
+                    <img
+                      [src]="m.image"
+                      [alt]="m.name"
+                      class="rounded-circle mb-2"
+                      width="100"
+                      height="100"
+                    />
+                    <h6 class="mb-0">{{ m.name }}</h6>
+                    <p class="small text-muted">{{ m.role }}</p>
+                  </div>
+                </div>
+          
+                <!-- Flèche droite -->
+                <button
+                  class="btn btn-outline-secondary position-absolute top-50 end-0 translate-middle-y"
+                  
+                  (click)="teamContainer.scrollBy({ left: 200, behavior: 'smooth' })"
+                >
+                  <i class="bi bi-chevron-right"></i>
+                </button>
+          
+              </div>
+            </div>
+        </section>
+            <!-- Overlay + carte détail (n’apparaît que si selectedMember ≠ null) -->
+  <ng-container *ngIf="selectedMember">
+    <!-- Fond semi-transparent -->
+    <div
+      class="position-fixed top-0 start-0 w-100 h-100"
+      style="background: rgba(0,0,0,0.5); z-index:1040;"
+      (click)="closeDetail()"
+    ></div>
+
+    <!-- Carte centrée -->
+    <div
+      class="position-fixed top-50 start-50 translate-middle bg-white shadow-lg rounded p-4"
+      style="width: 90%; max-width:500px; z-index:1050;"
+    >
+      <!-- bouton fermer -->
+      <button
+        type="button"
+        class="btn-close position-absolute top-2 end-2"
+        aria-label="Fermer"
+        (click)="closeDetail()"
+      ></button>
+
+      <!-- contenu du membre sélectionné -->
+      <img
+        [src]="selectedMember.image"
+        [alt]="selectedMember.name"
+        class="rounded-circle mb-3"
+        style="width:120px; height:120px; display:block; margin:auto;"
+      >
+      <h4 class="text-center">{{ selectedMember.name }}</h4>
+      <p class="text-center text-muted">{{ selectedMember.role }}</p>
+      <hr>
+      <p>{{ selectedMember.bio }}</p>
+    </div>
+  </ng-container>
+         
+       
+    
+      
+  </main>

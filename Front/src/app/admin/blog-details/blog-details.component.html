@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- Sidebar -->
+    <nav class="col-12 col-md-3 col-lg-2 bg-light vh-100 p-3">
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2">
+            <a routerLink="/dashboard" class="nav-link active">Dashboard</a>
+          </li>
+          <li class="nav-item mb-2">
+            <a routerLink="/administrateur" class="nav-link">Administrateur</a>
+          </li>
+          <li class="nav-item mb-2">
+            <a routerLink="/admin-formation" class="nav-link">Formation</a>
+          </li>
+          <li class="nav-item mb-2">
+            <a routerLink="/offre" class="nav-link">Offres Entrepreneurial</a>
+          </li>
+          <li class="nav-item mb-2">
+            <a routerLink="/candidat" class="nav-link">Candidats</a>
+          </li>
+          <li class="nav-item mb-2">
+            <a routerLink="/entrepreneur" class="nav-link">Entrepreneur</a>
+          </li>
+          <li class="nav-item mb-2">
+            <a routerLink="/admin-blog" class="nav-link">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/categorie" class="nav-link">Catégorie</a>
+          </li>
+          <li class="nav-item mt-4">
+          <button class="btn btn-outline-danger w-100" (click)="logout()">Déconnexion</button>
+        </li>
+        </ul>
+      </nav>
+
+    <!-- Contenu principal -->
+    <main class="col-12 col-md-9 col-lg-10 py-4">
+      <button class="btn btn-outline-primary mb-3" (click)="goBack()">&#8592; Retour</button>
+      <!-- Titre + Date -->
+      <h2 class="fw-bold mb-2">{{ data.titre }}</h2>
+      <p class="text-muted mb-4">
+        <i class="bi bi-clock-fill me-1"></i>{{ data.datedepubli }}
+      </p>
+
+      <!-- Contenu textuel -->
+      <p class="mb-5"[innerHTML]="data.contenu"></p>
+
+      <!-- Image de couverture -->
+      <img
+        [src]="data.image" 
+        [alt]="data.titre"
+        class="img-fluid rounded"
+        style="width:100%; max-height:400px; object-fit:cover;"
+      />
+    </main>
+  </div>
+</div>
+
+
